@@ -2,6 +2,6 @@ from . import views
 from django.urls import include, path
 
 urlpatterns = [
-    path('', views.main),
-    path('quiz/', include('quiz.urls')),
+    path('', views.main, name='home'),
+    path('quiz/', views.quiz, name='quiz'),
 ]

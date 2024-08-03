@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static%}
+<html>
+<head>
+    <title>Quiz Page</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'quiz.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Quiz</h1>
+        
+        <div class="quiz-question">
+            <h2>Question 1:</h2>
+            <ul class="quiz-options">
+                <li class="quiz-option">
+                    <input type="radio" name="question1" id="option1">
+                    <label for="option1">Option 1</label>
+                </li>
+                <li class="quiz-option">
+                    <input type="radio" name="question1" id="option2">
+                    <label for="option2">Option 2</label>
+                </li>
+                <li class="quiz-option">
+                    <input type="radio" name="question1" id="option3">
+                    <label for="option3">Option 3</label>
+                </li>
+                <li class="quiz-option">
+                    <input type="radio" name="question1" id="option4">
+                    <label for="option4">Option 4</label>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="quiz-question">
+            <h2>Question 2:</h2>
+            <ul class="quiz-options">
+                <li class="quiz-option">
+                    <input type="radio" name="question2" id="option5">
+                    <label for="option5">Option 1</label>
+                </li>
+                <li class="quiz-option">
+                    <input type="radio" name="question2" id="option6">
+                    <label for="option6">Option 2</label>
+                </li>
+                <li class="quiz-option">
+                    <input type="radio" name="question2" id="option7">
+                    <label for="option7">Option 3</label>
+                </li>
+                <li class="quiz-option">
+                    <input type="radio" name="question2" id="option8">
+                    <label for="option8">Option 4</label>
+                </li>
+            </ul>
+        </div>
+        
+        <div class="quiz-submit">
+            <button type="submit">Submit</button>
+        </div>
+    </div>
+</body>
+</html>

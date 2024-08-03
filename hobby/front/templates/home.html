@@ -1,13 +1,72 @@
 <!DOCTYPE html>
 {% load static %}
-<html>
+<html lang="en">
 <head>
-    <title>Hobby Quiz</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'master.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobby Finder</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
 </head>
 <body>
-    <h1>Welcome to Hobby Quiz!</h1>
-    <p>Test your knowledge about various hobbies.</p>
-    <a href="{% url 'quiz' %}">Start Quiz</a>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Hobby Finder</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'quiz' %}">Take the Quiz</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="jumbotron text-center">
+        <div class="container">
+            <h1 class="display-4">Discover Your Next Passion!</h1>
+            <p class="lead">Take our quiz to find hobbies that match your interests.</p>
+            <a href="{% url 'quiz' %}" class="btn btn-primary btn-lg">Take the Quiz</a>
+        </div>
+    </div>
+
+    <div class="container my-5">
+        <div class="row">
+            <div class='card bg-warning col-md-4 mr-1'>
+                <div class="text-center card-body">
+                    <h3>Personalized Quiz</h3>
+                    <p>Answer a few questions to get hobby suggestions tailored to your interests.</p>
+                </div>
+            </div>
+            <div class='card bg-success col-md-3 mx-4'>
+                <div class="text-center card-body ">
+                    <h3>Inspiration</h3>
+                    <p>Get inspired with a wide range of hobby ideas to explore and enjoy.</p>
+                </div>
+            </div>
+            <div class='card bg-info col-md-4 ml-1'>
+                <div class="text-center card-body ">
+                    <h3>Community</h3>
+                    <p>Join a community of hobby enthusiasts and share your experiences.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </body>
 </html>
