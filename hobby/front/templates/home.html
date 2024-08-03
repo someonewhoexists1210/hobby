@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>Hobby Quiz</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'master.css' %}">
+</head>
+<body>
+    <h1>Welcome to Hobby Quiz!</h1>
+    <p>Test your knowledge about various hobbies.</p>
+    <a href="{% url 'quiz' %}">Start Quiz</a>
+</body>
+</html>
