@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-{% load static%}
+{% load static %}
 <html>
 <head>
     <title>Quiz Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{% static 'quiz.css' %}">
 </head>
 <body>
@@ -13,8 +14,7 @@
             {% csrf_token %}
             
             {% for question in questions %}
-                <div class='question_div'>
-                    <input type="hidden" name="question_id" value="{{ question.id }}">
+                <div class='question_div card ' style="display: none;">
                     <h3>{{ question.text }}</h3>
                     {% for answer in question.answers.all %}
                         <label>
@@ -23,10 +23,20 @@
                         </label><br>
                     {% endfor %}
                 </div>
+                <br>
             {% endfor %}
+            <input type="hidden" name="question_ids" id="question_ids">
             <br>
-            <button type="submit">Submit</button>
+            <button type="button" id="prevBtn" onclick="showPrevQuestion()">Back</button>
+            <button type="button" id="nextBtn" onclick="showNextQuestion()">Next</button>
+            <button type="submit" id="submitBtn" style="display: none;">Submit</button>
         </form>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="{% static 'scripts/quiz.js' %}"></script>
 </body>
 </html>

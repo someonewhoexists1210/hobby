@@ -16,3 +16,11 @@ class Answer(models.Model):
             return f"{self.text} (Question: {self.question.text})"
         else:
             return self.text
+
+class Responses(models.Model):
+    question = models.ForeignKey(Question, related_name='responses', on_delete=models.CASCADE)
+    answer = models.ForeignKey(Answer, related_name='responses', on_delete=models.CASCADE)
+    ip = models.GenericIPAddressField()
+
+    def __str__(self):
+        return f"Question: {self.question.text}"
