@@ -17,7 +17,7 @@ class Answer(models.Model):
         else:
             return self.text
 
-class Responses(models.Model):
+class Response(models.Model):
     question = models.ForeignKey(Question, related_name='responses', on_delete=models.CASCADE)
     answer = models.ForeignKey(Answer, related_name='responses', on_delete=models.CASCADE)
     ip = models.GenericIPAddressField()

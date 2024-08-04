@@ -1,7 +1,9 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.template import loader
-from .models import Question, Responses
+
+from .suggest import suggestHobby
+from .models import Question, Response
 
 
 # Create your views here.
@@ -10,7 +12,7 @@ def main(request):
     return HttpResponse(temp.render())
 
 def quiz(request):
-    questions = Question.objects.order_by('?')[:3]
+    questions = Question.objects.order_by('?')
     return render(request, 'quiz_home.html', {'questions': questions})
 
 def result(request):
@@ -19,8 +21,8 @@ def result(request):
         answer_ids = []
         for question_id in question_ids:
             answer_ids.append(request.POST['question_' + question_id])
-        results = dict(zip(question_ids, answer_ids)) 
-        for key, value in results.items():
-            response = Responses(question_id=key, answer_id=value, ip=request.META['REMOTE_ADDR'])
+        for key, value in zip(question_ids, answer_ids):
+            response = Response(question_id=key, answer_id=value, ip=request.META['REMOTE_ADDR'])
             response.save()
-        return(HttpResponse('Thank you for taking the quiz!'))
+        suggested_hobbies = suggestHobby(answer_ids)
+        return HttpResponse(str(suggested_hobbies))
