@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     let questionDivs = document.querySelectorAll('.question_div');
     let currentQuestionIndex = 0;
-    let colors = ['red', 'green', 'blue', 'yellow', 'purple', 'orange', 'pink'];
+    let colors = ['lightpink', 'lightgreen', 'lightblue', 'lightyellow', 'lavender', 'lightsalmon', 'lightcyan'];
 
     questionDivs[currentQuestionIndex].style.display = 'block';
 
@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     function updateButtons() {
-        let questionNumber = currentQuestionIndex + 1;
         let questionDiv = questionDivs[currentQuestionIndex];
         questionDiv.style.backgroundColor = colors[currentQuestionIndex % colors.length];
         document.getElementById('prevBtn').style.display = currentQuestionIndex === 0 ? 'none' : 'inline';

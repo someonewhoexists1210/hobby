@@ -25,4 +25,4 @@ def result(request):
             response = Response(question_id=key, answer_id=value, ip=request.META['REMOTE_ADDR'])
             response.save()
         suggested_hobbies = suggestHobby(answer_ids)
-        return HttpResponse(str(suggested_hobbies))
+        return render(request, 'result.html', {'hobbies': suggested_hobbies})

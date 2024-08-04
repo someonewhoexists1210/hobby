@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>Result Page</title>
+    <link rel="stylesheet" href="{% static 'result.css' %}">
+</head>
+<body>
+    <h1>Result Page</h1>
+    <h3>Based on the quiz you just gave, I think these should be your hobbies</h3>
+    
+    <h2>Your Hobbies:</h2>
+    <ul class="hobby-list">
+        {% for hobby in hobbies %}
+            <li>{{ hobby }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
