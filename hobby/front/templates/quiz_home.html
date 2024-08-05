@@ -10,11 +10,15 @@
     <div class="container">
         <h1>Quiz</h1>
         
+        <div class="progress">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        
         <form method="post" action="{% url 'result' %}">
             {% csrf_token %}
             
             {% for question in questions %}
-                <div class='question_div card ' style="display: none;">
+                <div class='question_div card' style="display: none;">
                     <h3>{{ question.text }}</h3>
                     {% for answer in question.answers.all %}
                         <label>
@@ -23,13 +27,12 @@
                         </label><br>
                     {% endfor %}
                 </div>
-                
             {% endfor %}
             <input type="hidden" name="question_ids" id="question_ids">
             <br>
-            <button type="button" id="prevBtn" onclick="showPrevQuestion()">Back</button>
-            <button type="button" id="nextBtn" onclick="showNextQuestion()">Next</button>
-            <button type="submit" id="submitBtn" style="display: none;">Submit</button>
+            <button type="button" class="btn btn-secondary" id="prevBtn" onclick="showPrevQuestion()">Back</button>
+            <button type="button" class="btn btn-primary" id="nextBtn" onclick="showNextQuestion()">Next</button>
+            <button type="submit" class="btn btn-success" id="submitBtn" style="display: none;">Submit</button>
         </form>
     </div>
 
