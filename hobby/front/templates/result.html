@@ -36,8 +36,9 @@
         <h3>Your hobbies are:</h3>
         <div class="row">
             {% for hobby in hobbies %}
-                <div class="col-md-3">
-                    <div class="hobby-card">
+                <div class="col-md-2 hobby-card">
+                    <img src="{% static 'imgs/' %}{{ hobby }}.jpg" alt="{{ hobby }}" class="hobby-image">
+                    <div>
                         <h4>{{ hobby }}</h4>
                     </div>
                 </div>
