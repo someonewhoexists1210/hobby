@@ -95,18 +95,6 @@ p, li {
     background: #d4e6f1;
 }
 
-.footer {
-    background-color: #34495e;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-}
-
-.footer p {
-    margin: 0;
-}
-
 @keyframes fadeInDown {
     from {
         opacity: 0;
