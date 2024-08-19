@@ -1,10 +1,10 @@
 body {
-    font-family: 'Georgia', serif;
+    font-family: 'Arial', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
     color: #333;
-    background-color: #51db8b;
+    background-color: #85c1e9;
     scroll-behavior: smooth;
 }
 
@@ -67,7 +67,7 @@ h2::after {
     display: block;
     width: 50px;
     height: 3px;
-    background-color: #27ae60;
+    background-color: #fca559;
     margin-top: 10px;
     border-radius: 2px;
 }
@@ -84,7 +84,7 @@ p, li {
 }
 
 .benefits li, .tips li {
-    background: #e8f5e9;
+    background: #fbe9e7;
     margin: 10px 0;
     padding: 15px;
     border-radius: 5px;
@@ -92,7 +92,7 @@ p, li {
 }
 
 .benefits li:hover, .tips li:hover {
-    background: #c8e6c9;
+    background: #ffccbc;
 }
 
 @keyframes fadeInDown {
