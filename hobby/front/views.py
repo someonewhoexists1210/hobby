@@ -27,3 +27,9 @@ def result(request):
             response.save()
         suggested_hobbies = suggestHobby(answer_ids)
         return render(request, 'result.html', {'hobbies': suggested_hobbies})
+    
+def read(request):
+    return render(request, 'hobbies/Reading.html')
+
+def write(request):
+    return render(request, 'hobbies/Writing.html')

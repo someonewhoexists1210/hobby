@@ -1,5 +1,5 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Georgia', serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -39,7 +39,6 @@ body {
     animation: fadeInUp 2s;
 }
 
-/* Section Styles */
 section {
     padding: 60px 20px;
     margin: 20px auto;
@@ -95,7 +94,18 @@ p, li {
     background: #d4e6f1;
 }
 
-/* Animations */
+.footer {
+    background-color: #34495e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.footer p {
+    margin: 0;
+}
+
 @keyframes fadeInDown {
     from {
         opacity: 0;
