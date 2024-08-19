@@ -13,10 +13,14 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('question_ids').value = questionIds.join(',');
 
     window.showNextQuestion = function() {
-        if (currentQuestionIndex < questionDivs.length - 1) {
+        if (questionDivs[currentQuestionIndex].querySelector('input[type="radio"]:checked')) {
+            if (currentQuestionIndex < questionDivs.length - 1) {
             questionDivs[currentQuestionIndex].style.display = 'none';
             currentQuestionIndex++;
             questionDivs[currentQuestionIndex].style.display = 'block';
+            }
+        } else {
+            alert('Please select an answer.');
         }
         updateButtons();
     };
@@ -40,3 +44,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     updateButtons();
 });
+
+document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    form = event.target;
+    let submitBtn = document.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    form.submit();
+    }
+);

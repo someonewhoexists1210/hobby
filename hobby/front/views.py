@@ -19,6 +19,7 @@ def result(request):
     if request.method == 'POST':
         question_ids = request.POST['question_ids'].split(',')
         answer_ids = []
+        
         for question_id in question_ids:
             answer_ids.append(request.POST['question_' + question_id])
         for key, value in zip(question_ids, answer_ids):
