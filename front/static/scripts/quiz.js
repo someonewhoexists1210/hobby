@@ -15,12 +15,10 @@ document.addEventListener('DOMContentLoaded', function() {
     window.showNextQuestion = function() {
         if (questionDivs[currentQuestionIndex].querySelector('input[type="radio"]:checked')) {
             if (currentQuestionIndex < questionDivs.length - 1) {
-            questionDivs[currentQuestionIndex].style.display = 'none';
-            currentQuestionIndex++;
-            questionDivs[currentQuestionIndex].style.display = 'block';
-            let progressBar = document.getElementById('progressBar');
-            let progress = (currentQuestionIndex + 1) / questionDivs.length * 100;
-            progressBar.style.width = progress + '%';
+                questionDivs[currentQuestionIndex].style.display = 'none';
+                currentQuestionIndex++;
+                questionDivs[currentQuestionIndex].style.display = 'block';
+                updateProgressBar();
             }
         } else {
             alert('Please select an answer.');
@@ -33,10 +31,28 @@ document.addEventListener('DOMContentLoaded', function() {
             questionDivs[currentQuestionIndex].style.display = 'none';
             currentQuestionIndex--;
             questionDivs[currentQuestionIndex].style.display = 'block';
+            updateProgressBar();
         }
         updateButtons();
     };
 
+    function updateProgressBar() {
+        let progressBar = document.getElementById('progressBar');
+        let progress = (currentQuestionIndex + 1) / questionDivs.length * 100;
+        progressBar.style.width = progress + '%';
+        progressBar.style.backgroundColor = colors[currentQuestionIndex % colors.length + 1];
+    }
+    function handleRadioChange() {
+        let questionDiv = questionDivs[currentQuestionIndex];
+        let radioInputs = questionDiv.querySelectorAll('input[type="radio"]');
+        radioInputs.forEach(function(input) {
+            input.addEventListener('change', function() {
+                updateButtons();
+            });
+        });
+    }
+
+    handleRadioChange();
     function updateButtons() {
         let questionDiv = questionDivs[currentQuestionIndex];
         questionDiv.style.backgroundColor = colors[currentQuestionIndex % colors.length];
@@ -46,6 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     updateButtons();
+    updateProgressBar();
 });
 
 document.querySelector('form').addEventListener('submit', function(event) {
@@ -54,5 +71,4 @@ document.querySelector('form').addEventListener('submit', function(event) {
     let submitBtn = document.querySelector('button[type="submit"]');
     submitBtn.disabled = true;
     form.submit();
-    }
-);
+});
