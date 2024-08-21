@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-gtxk2(^*=rtn69aoh1%09o+iibi^8l72u*t*u%ca0hci59x@lw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["hobbyquiz.someonewhoexists.hackclub.app"]
 
 
 # Application definition
