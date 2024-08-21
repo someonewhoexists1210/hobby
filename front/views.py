@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.template import loader
 
-from .suggest import suggestHobby
+from .suggest import suggestHobby, all_hobbies
 from .models import Question, Response
 
 
@@ -28,5 +28,8 @@ def result(request):
         suggested_hobbies = suggestHobby(answer_ids)
         return render(request, 'result.html', {'hobbies': suggested_hobbies})
     
-def read(request, hobby):
+def findpage(request, hobby):
     return render(request, f'hobbies/{hobby}.html')
+
+def page_page(request):
+    return render(request, 'page_home.html', {'hobbies': all_hobbies()})

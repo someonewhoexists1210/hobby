@@ -23,10 +23,7 @@
                     <a class="nav-link" href="{% url 'quiz' %}">Take the Quiz</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="{% url 'pages' }">Hobbies</a>
                 </li>
             </ul>
         </div>
@@ -37,10 +34,12 @@
         <div class="row">
             {% for hobby in hobbies %}
                 <div class="col-md-2 hobby-card">
-                    <img src="{% static 'imgs/' %}{{ hobby }}.jpg" alt="{{ hobby }}" class="hobby-image">
-                    <div>
-                        <h4>{{ hobby }}</h4>
-                    </div>
+                    <a href="/pages/{{ hobby.link }}">
+                        <img src="{% static 'imgs/' %}{{ hobby.name }}.jpg" alt="{{ hobby.name }}" class="hobby-image">
+                        <div>
+                            <h4>{{ hobby.name }}</h4>
+                        </div>
+                    </a>
                 </div>
             {% endfor %}
         </div>

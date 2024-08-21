@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    <title>Hobbies</title>
+    <link rel="stylesheet" href="{% static 'page.css' %}">
+</head>
+<body>
+    <h1>My Hobbies</h1>
+    {% for hobby in hobbies %}
+        <div class="hobby-card">
+            <h3>{{ hobby.name }}</h3>
+            <p><a href="{{ hobby.link }}">Learn more</a></p>
+        </div>
+    {% endfor %}
+</body>
+</html>
