@@ -18,6 +18,9 @@ document.addEventListener('DOMContentLoaded', function() {
             questionDivs[currentQuestionIndex].style.display = 'none';
             currentQuestionIndex++;
             questionDivs[currentQuestionIndex].style.display = 'block';
+            let progressBar = document.getElementById('progressBar');
+            let progress = (currentQuestionIndex + 1) / questionDivs.length * 100;
+            progressBar.style.width = progress + '%';
             }
         } else {
             alert('Please select an answer.');
