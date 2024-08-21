@@ -27,7 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["hobbyquiz.someonewhoexists.hackclub.app"]
 
-CRSF_TRUSTED_ORIGINS = ["https://hobbyquiz.someonewhoexists.hackclub.app"]
+CSRF_TRUSTED_ORIGINS = ["https://hobbyquiz.someonewhoexists.hackclub.app"]
 
 # Application definition
 
