@@ -1,8 +1,8 @@
 hobby_list = ["Reading", "Writing", "Learning languages", "Solving puzzles", "Hiking", "Cycling", "Running", "Rock climbing", "Painting", "Drawing", "Crafting", "Playing musical instruments", "Team sports", "Board games", "Volunteering", "Joining clubs"]
 hobbies = {
-    "Intellectual/Educational": ["Reading", "Writing", "Learning languages", "Solving puzzles"],
+    "Intellectual/Educational": ["Reading", "Writing", "Learning Languages", "Solving Puzzles"],
     "Physical/Adventurous": ["Hiking", "Cycling", "Running", "Rock climbing"],
-    "Creative/Artistic": ["Painting", "Drawing", "Crafting", "Playing musical instruments"],
+    "Creative/Artistic": ["Painting", "Drawing", "Crafting", "Playing Musical Instruments"],
     "Social/Group-Based": ["Team sports", "Board games", "Volunteering", "Joining clubs"]
 }
 link_exceptions = {
