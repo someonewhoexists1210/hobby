@@ -25,9 +25,9 @@ SECRET_KEY = 'django-insecure-gtxk2(^*=rtn69aoh1%09o+iibi^8l72u*t*u%ca0hci59x@lw
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["hobbyquiz.someonewhoexists.hackclub.app"]
+ALLOWED_HOSTS = ["hobbyquiz.someonewhoexists.hackclub.app", "127.0.0.1"]
 
-CSRF_TRUSTED_ORIGINS = ["https://hobbyquiz.someonewhoexists.hackclub.app"]
+CSRF_TRUSTED_ORIGINS = ["https://hobbyquiz.someonewhoexists.hackclub.app", "http://127.0.0.1"]
 
 # Application definition
 

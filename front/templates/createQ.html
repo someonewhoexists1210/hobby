@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Questions</title>
+    <link rel="stylesheet" href="{% static 'create.html' %}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="form-title">Create a Question with Answers</h1>
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="form-question">
+                <h3>Question</h3>
+                <div class="form-group">
+                    {{ form.question.label_tag }}
+                    {{ form.question }}
+                </div>
+            </div>
+
+            <div class="form-answer">
+                <h4>Answer 1</h4>
+                <div class="form-group">
+                    {{ form.answer1.label_tag }}
+                    {{ form.answer1 }}
+                </div>
+            </div>
+            <div class="form-answer">
+                <h4>Answer 2</h4>
+                <div class="form-group">
+                    {{ form.answer2.label_tag }}
+                    {{ form.answer2 }}
+                </div>
+            </div>
+            <div class="form-answer">
+                <h4>Answer 3</h4>
+                <div class="form-group">
+                    {{ form.answer3.label_tag }} 
+                    {{ form.answer3 }}
+                </div>
+            </div>
+            <div class="form-answer">
+                <h4>Answer 4</h4>
+                <div class="form-group">
+                    {{ form.answer4.label_tag }}
+                    {{ form.answer4 }}
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+   
+</body>
+</html>

@@ -1,9 +1,9 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.template import loader
-
+from.forms import CreationForm
 from .suggest import suggestHobby, all_hobbies
-from .models import Question, Response
+from .models import Question, Answer, Response
 
 
 # Create your views here.
@@ -33,3 +33,20 @@ def findpage(request, hobby):
 
 def page_page(request):
     return render(request, 'page_home.html', {'hobbies': all_hobbies()})
+
+def create_question(request):
+    if request.method == 'POST':
+        form = CreationForm(request.POST)
+        if form.is_valid():
+            question_text = form.cleaned_data['question']
+            answers = [form.cleaned_data[f'answer{i}'] for i in range(1, 5)]
+            
+            question = Question.objects.create(text=question_text)
+            for answer_text in answers:
+                Answer.objects.create(question=question, text=answer_text)
+            
+            return redirect('home')
+    else:
+        form = CreationForm()
+    
+    return render(request, 'createQ.html', {'form': form})
