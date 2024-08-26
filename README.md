@@ -49,6 +49,9 @@ This project is a Django application that allows users to take a quiz to find ou
 ## How to use
 This app is available at https://hobbyquiz.someonewhoexists.hackclub.app
 
+## Screenshot
+![alt text](image.png)
+
 ## Contribution
 Contributing to this project is welcome, just make sure to make pull requests
 
